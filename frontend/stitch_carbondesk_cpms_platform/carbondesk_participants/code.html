@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="en" style="width: 1280px; height: 1024px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CarbonDesk - Participant Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#717973",
+                      "outline-variant": "#c1c8c2",
+                      "on-secondary-fixed-variant": "#005235",
+                      "secondary-fixed": "#92f7c3",
+                      "tertiary": "#002a36",
+                      "primary": "#012d1d",
+                      "surface-variant": "#d8e3fb",
+                      "tertiary-fixed": "#b7eaff",
+                      "primary-container": "#1b4332",
+                      "on-tertiary-fixed-variant": "#004e61",
+                      "on-primary-fixed-variant": "#274e3d",
+                      "inverse-primary": "#a5d0b9",
+                      "tertiary-fixed-dim": "#6cd3f7",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#a5d0b9",
+                      "surface-container-high": "#dee8ff",
+                      "primary-fixed": "#c1ecd4",
+                      "surface-container-low": "#f0f3ff",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#002113",
+                      "on-surface": "#111c2d",
+                      "error": "#ba1a1a",
+                      "inverse-surface": "#263143",
+                      "surface": "#f9f9ff",
+                      "background": "#f9f9ff",
+                      "secondary": "#006c48",
+                      "on-surface-variant": "#414844",
+                      "tertiary-container": "#004253",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#d8e3fb",
+                      "surface-container": "#e7eeff",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#75daa8",
+                      "on-primary-container": "#86af99",
+                      "on-tertiary-fixed": "#001f28",
+                      "inverse-on-surface": "#ecf1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#111c2d",
+                      "surface-tint": "#3f6653",
+                      "on-primary-fixed": "#002114",
+                      "surface-bright": "#f9f9ff",
+                      "secondary-container": "#92f7c3",
+                      "surface-dim": "#cfdaf2",
+                      "on-secondary-container": "#00734d",
+                      "on-tertiary-container": "#46b3d5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "base": "4px",
+                      "container-max": "1440px",
+                      "2xl": "48px",
+                      "sidebar-width": "260px",
+                      "xs": "4px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "display": ["Inter"],
+                      "label-md": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-sidebar-width py-lg bg-primary-container dark:bg-primary border-r border-outline-variant dark:border-outline fixed left-0 top-0 z-50">
+<div class="px-lg mb-xl"><h1 class="font-headline-md text-headline-md font-bold text-on-primary">CarbonDesk</h1><p class="font-label-sm text-label-sm text-on-primary/80 mt-sm">Enterprise Carbon Management</p></div>
+<ul class="flex flex-col gap-sm flex-1 overflow-y-auto w-full px-sm">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                    Projects
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg border-l-4 border-secondary-fixed bg-white/20 text-on-primary font-bold font-label-md text-label-md scale-[0.99] duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                    Participants
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+                    GIS
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+                    MRV
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                    Documents
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Reports
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    Audit Logs
+                </a>
+</li>
+</ul>
+<div class="mt-auto px-sm flex flex-col gap-sm">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary opacity-90 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Users
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-sidebar-width flex flex-col min-h-screen">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden flex items-center justify-between px-md py-sm bg-surface border-b border-surface-variant z-40 sticky top-0">
+<div class="flex items-center gap-sm">
+<button class="p-sm text-primary hover:bg-surface-variant rounded-lg transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-title-md text-title-md text-primary font-bold">CarbonDesk</h2>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm text-primary hover:bg-surface-variant rounded-lg transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Page Header & Actions -->
+<div class="px-lg py-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md bg-surface-container-lowest">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Participant Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Manage landowners and project participants.</p>
+</div>
+<button class="flex items-center gap-sm bg-primary text-on-primary px-lg py-sm rounded-lg font-title-md text-title-md hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined">add</span>
+                Add Participant
+            </button>
+</div>
+<!-- Filter & Search Bar -->
+<div class="px-lg py-md flex flex-col md:flex-row gap-md border-y border-surface-variant bg-surface-container-lowest sticky top-0 md:top-0 z-30 shadow-sm">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-xl pr-md py-sm border border-outline-variant rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Search by name or email..." type="text">
+</div>
+<div class="flex gap-md w-full md:w-auto overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+<select class="border border-outline-variant rounded-lg bg-surface-container-lowest px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 appearance-none pr-xl relative cursor-pointer min-w-[150px]">
+<option value="">All Statuses</option>
+<option value="active">Active</option>
+<option value="inactive">Inactive</option>
+<option value="pending">Pending</option>
+</select>
+<select class="border border-outline-variant rounded-lg bg-surface-container-lowest px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 appearance-none pr-xl relative cursor-pointer min-w-[180px]">
+<option value="">All Projects</option>
+<option value="p1">Project Alpha (Reforestation)</option>
+<option value="p2">Project Beta (Agroforestry)</option>
+<option value="p3">Project Gamma (Soil Carbon)</option>
+</select>
+</div>
+</div>
+<!-- Data Table Canvas -->
+<div class="p-lg flex-1 bg-surface-container-lowest">
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-variant font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="p-md font-semibold">Participant Name</th>
+<th class="p-md font-semibold">Contact Info</th>
+<th class="p-md font-semibold">Assigned Project</th>
+<th class="p-md font-semibold">Land/Parcel ID</th>
+<th class="p-md font-semibold">Status</th>
+<th class="p-md font-semibold text-center">Docs</th>
+<th class="p-md font-semibold">Last Updated</th>
+<th class="p-md font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-title-md font-bold">JD</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold">John Doe</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ID: PRT-2023-001</p>
+</div>
+</div>
+</td>
+<td class="p-md text-on-surface-variant">
+<p>john.doe@email.com</p>
+<p class="font-body-sm text-body-sm">+1 (555) 012-3456</p>
+</td>
+<td class="p-md text-on-surface">Project Alpha (Reforestation)</td>
+<td class="p-md text-on-surface font-mono text-sm">LND-884-2A</td>
+<td class="p-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold border border-secondary/20">
+                                        Active
+                                    </span>
+</td>
+<td class="p-md text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-variant text-on-surface font-label-md">4</span>
+</td>
+<td class="p-md text-on-surface-variant">Oct 12, 2023</td>
+<td class="p-md text-right">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 rounded-lg hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-title-md font-bold">SJ</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold">Sarah Jenkins</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ID: PRT-2023-042</p>
+</div>
+</div>
+</td>
+<td class="p-md text-on-surface-variant">
+<p>s.jenkins@farmco.net</p>
+<p class="font-body-sm text-body-sm">+1 (555) 987-6543</p>
+</td>
+<td class="p-md text-on-surface">Project Beta (Agroforestry)</td>
+<td class="p-md text-on-surface font-mono text-sm">LND-901-7B</td>
+<td class="p-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold border border-secondary/20">
+                                        Active
+                                    </span>
+</td>
+<td class="p-md text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-variant text-on-surface font-label-md">12</span>
+</td>
+<td class="p-md text-on-surface-variant">Nov 01, 2023</td>
+<td class="p-md text-right">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 rounded-lg hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-title-md font-bold">MR</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold">Michael Roberts</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ID: PRT-2022-118</p>
+</div>
+</div>
+</td>
+<td class="p-md text-on-surface-variant">
+<p>mroberts_agri@email.com</p>
+<p class="font-body-sm text-body-sm">+1 (555) 443-2211</p>
+</td>
+<td class="p-md text-on-surface">Project Gamma (Soil Carbon)</td>
+<td class="p-md text-on-surface font-mono text-sm">LND-102-4C</td>
+<td class="p-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant">
+                                        Inactive
+                                    </span>
+</td>
+<td class="p-md text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-variant text-on-surface font-label-md">1</span>
+</td>
+<td class="p-md text-on-surface-variant">Jan 15, 2023</td>
+<td class="p-md text-right">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 rounded-lg hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-lg py-md border-t border-surface-variant flex items-center justify-between bg-surface-container-low">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 3 of 45 entries</p>
+<div class="flex gap-sm">
+<button class="px-md py-sm border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled="">Previous</button>
+<button class="px-md py-sm border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+
+</body></html>

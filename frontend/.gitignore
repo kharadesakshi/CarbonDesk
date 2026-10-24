@@ -1,0 +1,26 @@
+# Node
+node_modules/
+
+# Production build
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store

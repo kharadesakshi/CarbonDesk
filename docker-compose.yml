@@ -1,0 +1,89 @@
+# Docker Compose - Carbon Project Management Platform
+# Development environment with all services
+
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: cpms-postgres
+    environment:
+      POSTGRES_USER: cpms_user
+      POSTGRES_PASSWORD: cpms_password
+      POSTGRES_DB: carbon_cpms_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cpms_user -d carbon_cpms_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - cpms-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: cpms-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      PORT: 5000
+      DATABASE_URL: postgresql://cpms_user:cpms_password@postgres:5432/carbon_cpms_db
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-key-min-32-characters-long}
+      CORS_ORIGIN: http://localhost:3000
+      STORAGE_PROVIDER: local
+      VITE_API_URL: http://localhost:5000/api
+      VITE_MAPBOX_ACCESS_TOKEN: ${VITE_MAPBOX_ACCESS_TOKEN}
+    volumes:
+      - ./server/src:/app/src
+      - ./server/dist:/app/dist
+      - ./uploads:/app/uploads
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks:
+      - cpms-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cpms-frontend
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://localhost:5000/api
+      VITE_MAPBOX_ACCESS_TOKEN: ${VITE_MAPBOX_ACCESS_TOKEN}
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks:
+      - cpms-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  cpms-network:
+    driver: bridge

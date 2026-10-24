@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CarbonDesk - Project Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-low": "#f6f3f2",
+                "surface": "#fbf9f8",
+                "error-red": "#DC2626",
+                "on-tertiary-fixed-variant": "#6e3900",
+                "content-bg": "#FFFFFF",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed": "#2f1500",
+                "on-surface-variant": "#414844",
+                "tertiary-fixed": "#ffdcc3",
+                "surface-container": "#f0eded",
+                "on-secondary-fixed-variant": "#0e5138",
+                "secondary": "#2c694e",
+                "surface-tint": "#3f6653",
+                "on-background": "#1b1c1c",
+                "sidebar-bg": "#1B4332",
+                "primary": "#012d1d",
+                "success-vibrant": "#2D6A4F",
+                "surface-variant": "#e4e2e1",
+                "on-secondary-container": "#316e52",
+                "on-secondary-fixed": "#002114",
+                "tertiary": "#3e1e00",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#eae8e7",
+                "tertiary-container": "#5e3000",
+                "surface-neutral": "#F8F9FA",
+                "on-surface": "#1b1c1c",
+                "inverse-surface": "#303030",
+                "surface-dim": "#dcd9d9",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#a5d0b9",
+                "on-error": "#ffffff",
+                "outline-variant": "#c1c8c2",
+                "sidebar-text": "#FFFFFF",
+                "primary-fixed-dim": "#a5d0b9",
+                "inverse-on-surface": "#f3f0f0",
+                "border-subtle": "#E5E7EB",
+                "secondary-fixed-dim": "#95d4b3",
+                "warning-amber": "#B45309",
+                "background": "#fbf9f8",
+                "tertiary-fixed-dim": "#ffb77d",
+                "secondary-container": "#aeeecb",
+                "on-tertiary-container": "#f48c24",
+                "on-primary-fixed-variant": "#274e3d",
+                "on-primary-fixed": "#002114",
+                "primary-container": "#1b4332",
+                "primary-fixed": "#c1ecd4",
+                "outline": "#717973",
+                "on-primary-container": "#86af99",
+                "on-secondary": "#ffffff",
+                "surface-container-highest": "#e4e2e1",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fbf9f8",
+                "secondary-fixed": "#b1f0ce",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-lg": "24px",
+                "sidebar-width": "260px",
+                "base": "4px",
+                "gutter-md": "16px",
+                "max-width": "1440px"
+        },
+        "fontFamily": {
+                "body-sm": [
+                        "Inter"
+                ],
+                "display": [
+                        "Inter"
+                ],
+                "title-md": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "title-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "title-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "title-lg": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "11px",
+                        {
+                                "lineHeight": "14px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex overflow-hidden h-screen">
+<!-- SideNavBar -->
+<aside class="bg-sidebar-bg dark:bg-primary fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant dark:border-outline flex flex-col h-full py-lg z-20">
+<div class="px-margin-lg mb-gutter-md pb-gutter-md border-b border-sidebar-text/20">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded bg-white flex items-center justify-center shrink-0">
+<img alt="CarbonDesk Logo" class="w-6 h-6 object-contain" data-alt="A minimalist logo design for an enterprise carbon management platform, featuring a stylized green leaf intersecting with a crisp geometric grid, set against a pure white background. The overall aesthetic is professional, clean, and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0P8UEVVTFcdRzIGfTjsVJTmGrq97ItXWGynY7n_5Ibaiqy-Ziak_K-TOsIeptbjevjj95fNbjvxJJhUKVEoRK7R2ukX6OhQjSGHwrMvVhrWM4TJRu6_6WbMFrPMGxUbOG4z5XUzjL-Musguyd-bhE905hUbnBQdhaaM7BAp8-X9cF0AKU9fjS8fXemp2DNwlvOmdXU-qaRdw8Tqg-XATlUriIVEC50fjTb_wjsZF0uy_DK8GJIBSo">
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-sidebar-text">CarbonDesk</h1>
+<p class="font-label-sm text-label-sm text-sidebar-text opacity-80">Enterprise Carbon Management</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-base">
+<ul class="space-y-base">
+<!-- Dashboard -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<!-- Projects (Active) -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT border-l-4 border-success-vibrant bg-white/10 text-sidebar-text font-bold font-label-md text-label-md scale-[0.99] duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span>Projects</span>
+</a>
+</li>
+<!-- Participants -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span>Participants</span>
+</a>
+</li>
+<!-- GIS -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">map</span>
+<span>GIS</span>
+</a>
+</li>
+<!-- MRV -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>MRV</span>
+</a>
+</li>
+<!-- Documents -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span>Documents</span>
+</a>
+</li>
+<!-- Reports -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>Reports</span>
+</a>
+</li>
+<!-- Audit Logs -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span>Audit Logs</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="px-base mt-auto pt-margin-lg border-t border-white/10">
+<ul class="space-y-base">
+<!-- Settings -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<!-- Users -->
+<li>
+<a class="flex items-center gap-gutter-md px-gutter-md py-base rounded-DEFAULT text-sidebar-text opacity-80 hover:opacity-100 hover:bg-white/10 transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span>Users</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 ml-sidebar-width flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar (Contextual to Project) -->
+<header class="bg-content-bg border-b border-border-subtle flex justify-between items-center w-full px-margin-lg h-16 shrink-0 z-10">
+<div class="flex items-center gap-margin-lg h-full">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-outline-variant">folder</span>
+<h2 class="font-title-lg text-title-lg font-semibold text-on-surface">Amazon Reforestation Project</h2>
+<span class="ml-base px-2 py-1 bg-success-vibrant/10 text-success-vibrant font-label-sm text-label-sm rounded-sm">Active</span>
+<span class="ml-1 px-2 py-1 bg-surface-neutral text-on-surface-variant font-label-sm text-label-sm rounded-sm border border-border-subtle">ARR</span>
+</div>
+</div>
+<!-- Contextual Nav Links for Project Workspace -->
+<div class="hidden lg:flex items-center h-full gap-margin-lg mx-margin-lg absolute left-1/2 transform -translate-x-1/2">
+<a class="h-full flex items-center text-success-vibrant font-bold border-b-2 border-success-vibrant font-title-md text-title-md transition-all" href="#">Overview</a>
+<a class="h-full flex items-center text-on-surface-variant font-body-md hover:text-on-surface transition-all" href="#">Participants</a>
+<a class="h-full flex items-center text-on-surface-variant font-body-md hover:text-on-surface transition-all" href="#">GIS</a>
+<a class="h-full flex items-center text-on-surface-variant font-body-md hover:text-on-surface transition-all" href="#">MRV</a>
+<a class="h-full flex items-center text-on-surface-variant font-body-md hover:text-on-surface transition-all" href="#">Documents</a>
+<a class="h-full flex items-center text-on-surface-variant font-body-md hover:text-on-surface transition-all" href="#">Reports</a>
+<a class="h-full flex items-center text-on-surface-variant font-body-md hover:text-on-surface transition-all" href="#">Audit</a>
+</div>
+<div class="flex items-center gap-gutter-md">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-base rounded-full hover:bg-surface-neutral">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-base rounded-full hover:bg-surface-neutral">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-neutral border border-border-subtle overflow-hidden cursor-pointer shrink-0">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a female executive in her mid-30s, wearing a dark green blazer over a white blouse. She is smiling subtly. The background is a slightly blurred modern corporate office with ample natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBgPVYlLjHg1whqWXMVEYckJqRtaJVKQex5t56rN0Axuiy8HtfUO3C_7u5aYI_MdJco3MxqTVOc1vwcE78P0mnDImwwRqbOZXll_inNgpv8tyEOVLLZ_6GHzicIfC-lixoWHscbCZHbW9OTy4FgNuh5e2pZQXHQ6iiyDOVZTRkVOFizQQ5nTBgNyMaF2Vkq3CF_rK069CCdgkRffjphhwMeYGOh1MNbZjQekinsKcJ46zECJgtQAD">
+</div>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-lg bg-surface-neutral">
+<div class="max-w-max-width mx-auto space-y-margin-lg">
+<div class="bg-warning-amber/10 border border-warning-amber text-warning-amber px-gutter-md py-base rounded-md text-center font-label-md">DEMO DATA</div>
+<!-- Top Actions & Progress -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-gutter-md">
+<div class="flex items-center gap-gutter-md w-full md:w-1/3">
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Project Progress</span>
+<span class="font-label-md text-label-md text-on-surface">65%</span>
+</div>
+<div class="w-full h-2 bg-border-subtle rounded-full overflow-hidden">
+<div class="h-full bg-success-vibrant rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<button class="flex items-center gap-base px-gutter-md py-base bg-content-bg border border-border-subtle text-on-surface font-label-md text-label-md rounded-DEFAULT hover:bg-surface-neutral transition-colors">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                            Add Participant
+                        </button>
+<button class="flex items-center gap-base px-gutter-md py-base bg-content-bg border border-border-subtle text-on-surface font-label-md text-label-md rounded-DEFAULT hover:bg-surface-neutral transition-colors">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+                            Upload Document
+                        </button>
+<button class="flex items-center gap-base px-gutter-md py-base bg-primary text-white font-label-md text-label-md rounded-DEFAULT hover:bg-sidebar-bg transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+                            Add MRV Record
+                        </button>
+</div>
+</div>
+<!-- Summary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+<!-- Card 1 -->
+<div class="bg-content-bg border border-border-subtle p-gutter-md rounded-lg flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute right-[-10px] top-[-10px] opacity-5 text-on-surface group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div class="relative z-10 flex items-center gap-base text-on-surface-variant">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Total Participants</span>
+</div>
+<div class="relative z-10">
+<span class="font-display text-display text-on-surface">120</span>
+<span class="font-body-sm text-body-sm text-success-vibrant ml-base text-green-600">+12 this month</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-content-bg border border-border-subtle p-gutter-md rounded-lg flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute right-[-10px] top-[-10px] opacity-5 text-on-surface group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">map</span>
+</div>
+<div class="relative z-10 flex items-center gap-base text-on-surface-variant">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Land Mapped</span>
+</div>
+<div class="relative z-10 flex items-baseline gap-1">
+<span class="font-display text-display text-on-surface">500</span>
+<span class="font-title-md text-title-md text-on-surface-variant">ha</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-content-bg border border-border-subtle p-gutter-md rounded-lg flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute right-[-10px] top-[-10px] opacity-5 text-on-surface group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+</div>
+<div class="relative z-10 flex items-center gap-base text-on-surface-variant">
+<span class="material-symbols-outlined">fact_check</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">MRV Submissions</span>
+</div>
+<div class="relative z-10">
+<span class="font-display text-display text-on-surface">45</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-base">3 pending review</span>
+</div>
+</div>
+</div>
+<!-- Lower Layout: Timeline & Activity -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-margin-lg">
+<!-- Project Timeline (Spans 2 columns) -->
+<div class="lg:col-span-2 bg-content-bg border border-border-subtle rounded-lg p-margin-lg">
+<div class="flex justify-between items-center mb-margin-lg pb-gutter-md border-b border-border-subtle">
+<h3 class="font-title-lg text-title-lg text-on-surface">Project Timeline</h3>
+<button class="text-success-vibrant font-label-md text-label-md hover:underline">View Full Schedule</button>
+</div>
+<div class="relative pl-gutter-md border-l-2 border-border-subtle ml-base space-y-margin-lg mt-gutter-md">
+<!-- Timeline Item 1 (Completed) -->
+<div class="relative">
+<div class="absolute w-4 h-4 rounded-full bg-success-vibrant left-[-25px] top-1 border-2 border-white"></div>
+<div class="flex items-center gap-base mb-1">
+<span class="font-label-md text-label-md text-success-vibrant uppercase">Completed</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Oct 12, 2023</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Initial Feasibility Study</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Comprehensive baseline assessment of the 500ha region completed by the field team. Soil samples and initial GIS mapping validated.</p>
+</div>
+<!-- Timeline Item 2 (Active) -->
+<div class="relative">
+<div class="absolute w-4 h-4 rounded-full bg-primary left-[-25px] top-1 border-2 border-white shadow-[0_0_0_2px_rgba(1,45,29,0.2)]"></div>
+<div class="flex items-center gap-base mb-1">
+<span class="font-label-md text-label-md text-on-surface uppercase">In Progress</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Present</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Participant Onboarding &amp; Land Delineation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Currently onboarding local stakeholders. 120/150 target participants registered. Awaiting final boundary approvals for 3 sub-plots.</p>
+</div>
+<!-- Timeline Item 3 (Upcoming) -->
+<div class="relative">
+<div class="absolute w-4 h-4 rounded-full bg-border-subtle left-[-25px] top-1 border-2 border-white"></div>
+<div class="flex items-center gap-base mb-1">
+<span class="font-label-md text-label-md text-outline uppercase">Upcoming</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Est. Q2 2024</span>
+</div>
+<h4 class="font-title-md text-title-md text-outline mb-1">First MRV Verification Audit</h4>
+<p class="font-body-md text-body-md text-outline max-w-2xl">Third-party VVB scheduled for initial site visit to verify baseline measurements and planting activities.</p>
+</div>
+</div>
+</div>
+<!-- Recent Activity Sidebar -->
+<div class="bg-content-bg border border-border-subtle rounded-lg flex flex-col h-[500px]">
+<div class="p-gutter-md border-b border-border-subtle shrink-0">
+<h3 class="font-title-md text-title-md text-on-surface">Recent Activity</h3>
+</div>
+<div class="flex-1 overflow-y-auto p-gutter-md space-y-gutter-md">
+<!-- Activity Item -->
+<div class="flex gap-gutter-md">
+<div class="w-8 h-8 rounded-full bg-surface-neutral flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface"><span class="font-semibold">Sarah Jenkins</span> uploaded <span class="text-success-vibrant cursor-pointer hover:underline">Baseline_Report_v2.pdf</span></p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 hours ago</span>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-gutter-md">
+<div class="w-8 h-8 rounded-full bg-surface-neutral flex items-center justify-center text-success-vibrant shrink-0">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface"><span class="font-semibold">System</span> automatically registered Participant <span class="font-mono bg-surface-neutral px-1 border border-border-subtle rounded">ID-8921</span></p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5 hours ago</span>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-gutter-md">
+<div class="w-8 h-8 rounded-full bg-surface-neutral flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[16px]">map</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface"><span class="font-semibold">Marcus Vance</span> updated GIS boundaries for <span class="text-success-vibrant cursor-pointer hover:underline">Plot Alpha</span></p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday</span>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-gutter-md">
+<div class="w-8 h-8 rounded-full bg-error-container flex items-center justify-center text-error shrink-0">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">MRV Submission <span class="font-mono bg-surface-neutral px-1 border border-border-subtle rounded">MRV-044</span> flagged for review</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday</span>
+</div>
+</div>
+</div>
+<div class="p-base border-t border-border-subtle shrink-0 text-center">
+<button class="text-success-vibrant font-label-md text-label-md hover:underline py-base w-full">View All Activity</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

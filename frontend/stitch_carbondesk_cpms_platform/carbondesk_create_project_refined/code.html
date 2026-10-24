@@ -1,0 +1,449 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Create Project - CarbonDesk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-low": "#f6f3f2",
+                "surface": "#fbf9f8",
+                "error-red": "#DC2626",
+                "on-tertiary-fixed-variant": "#6e3900",
+                "content-bg": "#FFFFFF",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed": "#2f1500",
+                "on-surface-variant": "#414844",
+                "tertiary-fixed": "#ffdcc3",
+                "surface-container": "#f0eded",
+                "on-secondary-fixed-variant": "#0e5138",
+                "secondary": "#2c694e",
+                "surface-tint": "#3f6653",
+                "on-background": "#1b1c1c",
+                "sidebar-bg": "#1B4332",
+                "primary": "#012d1d",
+                "success-vibrant": "#2D6A4F",
+                "surface-variant": "#e4e2e1",
+                "on-secondary-container": "#316e52",
+                "on-secondary-fixed": "#002114",
+                "tertiary": "#3e1e00",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#eae8e7",
+                "tertiary-container": "#5e3000",
+                "surface-neutral": "#F8F9FA",
+                "on-surface": "#1b1c1c",
+                "inverse-surface": "#303030",
+                "surface-dim": "#dcd9d9",
+                "surface-container-lowest": "#ffffff",
+                "inverse-primary": "#a5d0b9",
+                "on-error": "#ffffff",
+                "outline-variant": "#c1c8c2",
+                "sidebar-text": "#FFFFFF",
+                "primary-fixed-dim": "#a5d0b9",
+                "inverse-on-surface": "#f3f0f0",
+                "border-subtle": "#E5E7EB",
+                "secondary-fixed-dim": "#95d4b3",
+                "warning-amber": "#B45309",
+                "background": "#fbf9f8",
+                "tertiary-fixed-dim": "#ffb77d",
+                "secondary-container": "#aeeecb",
+                "on-tertiary-container": "#f48c24",
+                "on-primary-fixed-variant": "#274e3d",
+                "on-primary-fixed": "#002114",
+                "primary-container": "#1b4332",
+                "primary-fixed": "#c1ecd4",
+                "outline": "#717973",
+                "on-primary-container": "#86af99",
+                "on-secondary": "#ffffff",
+                "surface-container-highest": "#e4e2e1",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fbf9f8",
+                "secondary-fixed": "#b1f0ce",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-lg": "24px",
+                "sidebar-width": "260px",
+                "base": "4px",
+                "gutter-md": "16px",
+                "max-width": "1440px"
+        },
+        "fontFamily": {
+                "body-sm": [
+                        "Inter"
+                ],
+                "display": [
+                        "Inter"
+                ],
+                "title-md": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "title-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "title-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "title-lg": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "11px",
+                        {
+                                "lineHeight": "14px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .custom-input {
+            border-color: #E5E7EB;
+            transition: all 0.2s ease-in-out;
+        }
+        .custom-input:focus {
+            border-color: #2D6A4F !important;
+            box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.2) !important;
+            outline: none;
+        }
+        .form-section-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-sidebar-bg text-sidebar-text font-label-md text-label-md fixed left-0 top-0 h-screen w-[260px] flex flex-col h-full py-6 z-50">
+<div class="px-6 mb-8">
+<h1 class="font-headline-md text-headline-md font-bold text-sidebar-text">CarbonDesk</h1>
+<p class="text-sidebar-text/80 mt-1 font-label-sm">Enterprise Carbon Management</p>
+</div>
+<ul class="flex-1 space-y-1 px-2">
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors Active: scale-[0.99] duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg border-l-4 border-secondary-fixed bg-white/10 text-sidebar-text font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span>Projects</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span>Participants</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span>GIS</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+<span>MRV</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span>Documents</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span>Reports</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto px-2 pt-4 border-t border-white/10">
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span>Audit Logs</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-sidebar-text/80 hover:text-sidebar-text hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Users</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-[260px] flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface text-primary font-title-md text-title-md docked full-width top-0 border-b border-border-subtle flat no shadows flex justify-between items-center w-full px-6 h-16 max-w-[calc(100%-260px)] fixed z-40 bg-white/90 backdrop-blur-sm">
+<div class="flex items-center gap-8">
+<h2 class="font-headline-md text-headline-md font-extrabold text-primary hidden md:block">CarbonDesk</h2>
+<nav class="hidden lg:flex gap-4">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-all" href="#">Overview</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-all" href="#">Participants</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-all" href="#">GIS</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-all" href="#">MRV</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-all" href="#">Documents</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-variant border border-outline-variant ml-2 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional corporate headshot of a person, well-lit against a neutral grey background, representing an enterprise user in a carbon management system, subtle light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW5VooTCw1-4kftw08PSL9p1-f6N5uRJTjmf076LwmsKnEbn1Xt2ubONI7mtZ21rYDUoZMJfgiRlMO8NCgLC9ukZc4WDEf7SPmqBz2nn8tgWac8VAico9_AeffOe95Uf0sRz_4-Vs2Lyb2_s4OVFjOSdfeITkV7eOUzR6dwuIyFuKRGhirIwFlOsFVp43Cg6CTNFAN6K-oKRvarWeYEg35ptXnOryR69G9U0R5GJ9DLJT3ViUDoyrc">
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 p-6 mt-16 max-w-[1024px] mx-auto w-full">
+<div class="mb-8">
+<h1 class="font-display text-display text-primary mb-2">Create New Project</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Initialize a new carbon offset initiative and define core parameters.</p>
+</div>
+<form class="space-y-8">
+<!-- 1. Project Information -->
+<section class="form-section-card rounded-lg p-6">
+<div class="border-b border-border-subtle pb-4 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">info</span>
+<h3 class="font-title-lg text-title-lg text-primary">1. Project Information</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2 col-span-1 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface" for="projectName">Project Name <span class="text-error-red">*</span></label>
+<input class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0" id="projectName" name="projectName" placeholder="e.g., Sumatra Peatland Restoration" required="" type="text">
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="projectType">Project Type <span class="text-error-red">*</span></label>
+<select class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0 appearance-none" id="projectType" name="projectType" required="">
+<option disabled="" selected="" value="">Select offset methodology...</option>
+<option value="afforestation">Afforestation / Reforestation (ARR)</option>
+<option value="redd">REDD+</option>
+<option value="blue_carbon">Blue Carbon</option>
+<option value="soil_carbon">Agricultural Soil Carbon</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="methodology">Carbon Standard / Methodology</label>
+<input class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0" id="methodology" name="methodology" placeholder="e.g., Verra (VCS), Gold Standard (Optional)" type="text">
+</div>
+<div class="space-y-2 col-span-1 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface" for="description">Project Description</label>
+<textarea class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0 resize-y" id="description" name="description" placeholder="Briefly detail the project activities, baseline scenario, and expected impact..." rows="4"></textarea>
+</div>
+</div>
+</section>
+<!-- 2. Location -->
+<section class="form-section-card rounded-lg p-6">
+<div class="border-b border-border-subtle pb-4 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<h3 class="font-title-lg text-title-lg text-primary">2. Location Data</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="block font-label-md text-label-md text-on-surface" for="location">Project Location <span class="text-error-red">*</span></label>
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-1 font-label-sm cursor-pointer">
+<span class="material-symbols-outlined text-[16px]">map</span>
+Open Map &amp; Define Boundary
+</a>
+</div>
+<input class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0" id="location" name="location" placeholder="e.g., Indonesia" required="" type="text">
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="area">Total Area (Hectares)</label>
+<div class="relative">
+<input class="w-full rounded-md border custom-input px-4 py-2 pr-12 font-body-md text-on-surface bg-content-bg focus:ring-0" id="area" name="area" placeholder="0.00" type="number">
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-label-md text-outline">ha</span>
+</div>
+</div>
+<div class="space-y-2 col-span-1 md:col-span-2">
+<details class="group">
+<summary class="font-label-md text-label-md text-on-surface cursor-pointer flex items-center gap-2 select-none hover:text-secondary transition-colors">
+<span class="material-symbols-outlined transition-transform group-open:rotate-90">chevron_right</span>
+Advanced: Import Boundary Data (GeoJSON/SHP)
+</summary>
+<div class="mt-4 flex justify-center px-6 py-8 border-2 border-dashed border-border-subtle rounded-md bg-surface-neutral relative group hover:border-secondary transition-colors cursor-pointer">
+<div class="text-center">
+<span class="material-symbols-outlined text-display text-outline-variant group-hover:text-secondary mb-2">cloud_upload</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Click to upload KML/SHP or drag and drop</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">Max file size: 50MB</p>
+</div>
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file">
+</div>
+<div class="mt-2 flex items-center">
+<div class="flex-grow border-t border-border-subtle"></div>
+<span class="mx-2 font-label-sm text-outline">OR ENTER MANUALLY</span>
+<div class="flex-grow border-t border-border-subtle"></div>
+</div>
+<input class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0 mt-2" id="coordinates" name="coordinates" placeholder="e.g., POLYGON((...))" type="text">
+</details>
+</div>
+</div>
+</section>
+<!-- 3. Timeline -->
+<section class="form-section-card rounded-lg p-6">
+<div class="border-b border-border-subtle pb-4 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">calendar_month</span>
+<h3 class="font-title-lg text-title-lg text-primary">3. Project Timeline</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="startDate">Project Start Date <span class="text-error-red">*</span></label>
+<input class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0" id="startDate" name="startDate" required="" type="date">
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="endDate">Initial Monitoring Period End <span class="text-error-red">*</span></label>
+<input class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0" id="endDate" name="endDate" required="" type="date">
+</div>
+</div>
+</section>
+<!-- 4. Management -->
+<section class="form-section-card rounded-lg p-6">
+<div class="border-b border-border-subtle pb-4 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">group_add</span>
+<h3 class="font-title-lg text-title-lg text-primary">4. Management &amp; Assignment</h3>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface" for="fieldAgents">Assign Field Agents / Project Managers</label>
+<select class="w-full rounded-md border custom-input px-4 py-2 font-body-md text-on-surface bg-content-bg focus:ring-0 h-32" id="fieldAgents" multiple="" name="fieldAgents">
+<option value="agent1">Sarah Jenkins (Lead Auditor)</option>
+<option value="agent2">David Chen (GIS Specialist)</option>
+<option value="agent3">Maria Rodriguez (Community Liaison)</option>
+<option value="agent4">James Wilson (Forester)</option>
+<option value="agent5">Elena Rostova (MRV Lead)</option>
+</select>
+<p class="font-label-sm text-outline mt-1">Hold Cmd/Ctrl to select multiple team members.</p>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex justify-end gap-4 pt-4 border-t border-border-subtle">
+<button class="px-6 py-2 rounded border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-neutral transition-colors" type="button">
+                        Cancel
+                    </button>
+<button class="px-6 py-2 rounded bg-success-vibrant text-white font-label-md text-label-md hover:bg-secondary transition-colors shadow-sm" type="submit">
+                        Create Project
+                    </button>
+</div>
+</form>
+</main>
+</div>
+</body></html>
